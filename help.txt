@@ -1,0 +1,9 @@
+Links to help with pi development
+	1. https://tutorials-raspberrypi.com/digital-raspberry-pi-scale-weight-sensor-hx711/
+		-> Walk through of connecting a raspberry pi with a load sensor
+	2. http://wiringpi.com/
+		-> the wiring pi library (written in c)
+	3. http://abyz.me.uk/rpi/pigpio/index.html
+		-> The pigpio library (written in python)
+	4. https://raspberrypi.stackexchange.com/questions/81488/interfacing-raspberry-pi-3-with-load-cell-using-hx711
+		-> A stack exchange article about itnerfacing a load cell with a raspberry pi using hte pigpio library.
