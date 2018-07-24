@@ -1,7 +1,3 @@
-
-
-
-
 import RPi.GPIO as gpio
 import time
 
@@ -161,7 +157,7 @@ def readCount():
   return Count  
 
 begin()
-time.sleep(3)
+time.sleep(0.50)
 sample= readCount()
 flag=0
 while 1:
@@ -171,18 +167,18 @@ while 1:
   print w,"g"
   if w>100:  
     setCursor(0,0)
-    print "Gate Opened "
+    print "Weight > 100g"
     if flag == 0:
       gpio.output(m1, 1)
       gpio.output(m2, 0)
-      time.sleep(1.3)
+      time.sleep(0.50)
       gpio.output(m1, 0)
       gpio.output(m2, 0)
-      time.sleep(1.5)
+      time.sleep(0.50)
       flag=1;
   elif w<100:
     setCursor(0,0)
-    print "Gate Closed "
+    print "Weight < 100g"
     if flag==1:
       gpio.output(m1, 0)
       gpio.output(m2, 1)
