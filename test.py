@@ -36,4 +36,35 @@ def readCount():
   gpio.output(SCK,1)
   Count=Count^0x800000
   gpio.output(SCK,0)
-  return Count 
+
+while 1:
+  count= readCount()
+  w=0
+  w=(count-sample)/106
+  print w,"g"
+  if w>100:  
+    setCursor(0,0)
+    lcdprint("Gate Opened ")
+    if flag == 0:
+      gpio.output(m1, 1)
+      gpio.output(m2, 0)
+      time.sleep(1.3)
+      gpio.output(m1, 0)
+      gpio.output(m2, 0)
+      time.sleep(1.5)
+      flag=1;
+      lcdclear()
+  elif w<100:
+    setCursor(0,0)
+    lcdprint("Gate Closed ")
+    if flag==1:
+      gpio.output(m1, 0)
+      gpio.output(m2, 1)
+      time.sleep(1.3)
+      gpio.output(m1, 0)
+      gpio.output(m2, 0)
+      time.sleep(2)
+      flag=0
+  time.sleep(0.5)  
+
+return Count 
