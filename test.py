@@ -1,3 +1,19 @@
+import RPi.GPIO as gpio
+import time
+
+RS =18
+EN =23
+D4 =24
+D5 =25
+D6 =8
+D7 =7
+
+DT =27
+SCK=17
+
+m1=12
+m2=1
+
 def readCount():
   i=0
   Count=0
